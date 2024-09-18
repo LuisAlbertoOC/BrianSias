@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Processing.35 dentro de página HTML</title>
+	</head>
+	<body>
+		<canvas id="MiLienzo1"></canvas>
+        <canvas id="MiLienzo2"></canvas>
+        <canvas id="MiLienzo3"></canvas>
+        <canvas id="MiLienzo4"></canvas>
+        <canvas id="MiLienzo5"></canvas>
+        <canvas id="MiLienzo6"></canvas>
+	</body>
+
+	<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+	<script>
+    //Muñeco de nieve simple  
+	var codigoDePrograma1 = function(instanciaProcessing) {
+		with (instanciaProcessing) {
+            size(400, 400);
+            frameRate(30);
+            ellipse(200, 300, 150, 150);
+            ellipse(200, 210, 120, 120);
+            ellipse(200, 150, 80, 80);
+		}
+	};
+    //Muñeco de nieve saludando
+    var codigoDePrograma2 = function(instanciaProcessing) {
+		with (instanciaProcessing) {
+            size(400, 400);
+            frameRate(30);
+            rect(5, 350, 390, 50);
+            ellipse(200, 300, 150, 150);
+            ellipse(200, 200, 100, 100);
+            ellipse(200, 120, 75, 75);
+            line(160, 200, 50, 100);
+            line(240, 200, 350, 100);
+		}
+	};
+    //Dia soleado
+    var codigoDePrograma3 = function(instanciaProcessing) {
+		with (instanciaProcessing) {
+            size(400, 400);
+            frameRate(30);
+            // The ground
+            fill(0, 255, 21);
+            background(51, 219, 185);
+            rect(0, 300, 400, 100);  
+
+            // The sun
+            fill(51, 255, 0);
+            ellipse(80, 64, 100, 100);  
+
+            // The snowman
+            fill(9, 255, 0);
+            ellipse(200, 300, 150, 150);
+            ellipse(200, 200, 100, 100);
+            ellipse(200, 120, 75, 75);
+		}
+	};
+    //Que hay de cenar?
+    var codigoDePrograma4 = function(instanciaProcessing) {
+        with (instanciaProcessing) {
+            size(400, 400);
+            frameRate(30);
+            background(186, 145, 20); // wooden table
+            ellipse(200, 200, 350, 350); // plate
+            ellipse(200, 200, 300, 300); 
+
+            fill(255, 0, 242); // Uvas
+            ellipse(132, 90, 30, 30);
+            ellipse(160, 90, 30, 30);
+            ellipse(188, 90, 30, 30);
+            ellipse(210, 90, 30, 30);
+            ellipse(173, 108, 30, 30);
+            ellipse(200, 108, 30, 30);
+            ellipse(159, 128, 30, 30);
+            ellipse(182, 129, 30, 30);
+            ellipse(146, 108, 30, 30);
+            ellipse(174, 143, 30, 30);
+
+            fill(251, 255, 0); // pizza
+            triangle(108, 255, 278, 327, 294, 211);
+            fill(255, 0, 0);
+            ellipse(264, 239, 25, 27);
+            ellipse(184, 267, 25, 27);
+            ellipse(239, 267, 25, 27);
+            ellipse(212, 249, 25, 27);
+            ellipse(260, 296, 25, 27);
+
+            fill(47, 255, 0); // sandía
+            ellipse(126, 195, 125, 80);
+
+            fill(255, 157, 0); // naranja
+            ellipse(254, 155, 85, 85);
+		}
+	};
+    //Ratón
+    var codigoDePrograma5 = function(instanciaProcessing) {
+		with (instanciaProcessing) {
+		    size(400, 400);
+		    frameRate(30);
+            var eyeSize = 40;
+            var toothSize = 15;
+            ellipse(150, 70, 60, 120);  // left ear
+            ellipse(240, 70, 60, 120);  // right ear
+
+            ellipse(200, 170, 150, 150);    // face
+
+            fill(0, 0, 0);
+            ellipse(170, 150, eyeSize, eyeSize);  // left eye
+            ellipse(230, 150, eyeSize, eyeSize);  // right eye
+
+            line(150, 200, 250, 200);   // mouth
+
+            noFill();
+            rect(185, 200, 15, toothSize); // left tooth
+            rect(200, 200, 15, toothSize); // right tooth
+		}
+	};
+    //Rana
+    var codigoDePrograma6 = function(instanciaProcessing) {
+		with (instanciaProcessing) {
+		    size(400, 400);
+		    frameRate(30);
+            var x = 200;
+            var y = 200;
+
+            noStroke();
+            fill(30, 204, 91); // a nice froggy green!
+
+            ellipse(x, y, 200, 100); // face
+            ellipse(x - 50, y - 50, 40, 40); // left eye socket
+            ellipse(x + 50, y - 50, 40, 40); // right eye socket
+
+            fill(255, 255, 255); // for the whites of the eyes!
+            ellipse(x - 50, y - 50, 30, 30); // left eyeball
+            ellipse(x + 50, y - 50, 30, 30); // right eyeball
+
+            fill(10, 9, 9);
+            ellipse(x, y, 114, 68);
+
+            fill(23, 20, 20);
+            rect(x - 55, y - 53, 10, 10);
+            rect(x + 46, y - 54, 10, 10);
+		}
+	};
+	var canvas1 = document.getElementById('MiLienzo1');
+	var instanciaProcessing1 = new Processing(canvas1, codigoDePrograma1);
+    
+    var canvas2 = document.getElementById('MiLienzo2');
+	var instanciaProcessing2 = new Processing(canvas2, codigoDePrograma2);
+    
+    var canvas3 = document.getElementById('MiLienzo3');
+	var instanciaProcessing3 = new Processing(canvas3, codigoDePrograma3);
+    
+    var canvas4 = document.getElementById('MiLienzo4');
+	var instanciaProcessing4 = new Processing(canvas4, codigoDePrograma4);
+    
+    var canvas5 = document.getElementById('MiLienzo5');
+	var instanciaProcessing5 = new Processing(canvas5, codigoDePrograma5);
+    
+    var canvas6 = document.getElementById('MiLienzo6');
+	var instanciaProcessing6 = new Processing(canvas6, codigoDePrograma6);
+	</script>
+</html>
